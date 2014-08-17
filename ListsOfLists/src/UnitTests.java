@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class UnitTests {
 
 	@Test
-	public void test() {
+	public void test1() {
 		// {{“the”, “a”, “some”}, {“quick”, “brown”}, {“fox”, “dog”, “cow”}}
 		List<List<String>> testListOne = new ArrayList<List<String>>();
 		List<String> zero = new ArrayList<String>();
@@ -31,4 +31,28 @@ public class UnitTests {
 		Main.TestBuildStrings(testListOne);
 	}
 
+	@Test
+	public void test2(){
+		// {{the, a, my}, {brown, apple, car}, {cat, mustache, raisin, fast}}
+		List<List<String>> testListOne = new ArrayList<List<String>>();
+		List<String> zero = new ArrayList<String>();
+		zero.add("the");
+		zero.add("a");
+		zero.add("my");
+		List<String> one = new ArrayList<String>();
+		one.add("brown");
+		one.add("apple");
+		one.add("car");
+		List<String> two = new ArrayList<String>();
+		two.add("cat");
+		two.add("mustache");
+		two.add("raisin");
+		two.add("fast");
+		testListOne.add(zero);
+		testListOne.add(one);
+		testListOne.add(two);
+		
+		Main.TestBuildStrings(testListOne);
+	
+	}
 }
