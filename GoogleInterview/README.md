@@ -1,1 +1,0 @@
-This project represents my solution to my Google interview.
