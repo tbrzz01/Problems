@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,18 +19,20 @@ public class Main {
 
 	}
 	
-	public static void TestBuildStrings(List<List<String>> list){
-		buildStrings(list);
+	public static List<String> TestBuildStrings(List<List<String>> list){
+		return buildStrings(list);
 	}
 	
 	/**
 	 * @param list 
 	 */
-	private static void buildStrings(List<List<String>> list){
-		// TODO implemenet
+	private static List<String> buildStrings(List<List<String>> list){
+		List<String> strColl = new ArrayList<String>();
 		if(list != null && list.size() > 0){
-			traverse("", list, 0, list.size());
+			traverse("", list, 0, list.size(), strColl);
 		}
+		
+		return strColl;
 	}
 	
 	/**
@@ -39,13 +42,14 @@ public class Main {
 	 * @param currentLevel
 	 * @param maxLevel
 	 */
-	private static void traverse(String s, List<List<String>> strings, int currentLevel, int maxLevel){
+	private static void traverse(String s, List<List<String>> strings, int currentLevel, int maxLevel, List<String> coll){
 		if(currentLevel >= maxLevel){
 			System.out.println(s);
+			coll.add(s);
 		}
 		else{
 			for(String word : strings.get(currentLevel)){
-				traverse(s + " " + word, strings, currentLevel + 1, maxLevel);
+				traverse(s + " " + word, strings, currentLevel + 1, maxLevel, coll);
 			}
 		}
 	}

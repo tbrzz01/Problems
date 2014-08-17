@@ -1,7 +1,11 @@
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
 import java.util.List;
 import java.util.ArrayList;
+
+import junit.framework.Assert;
 
 /**
  * @author Trey
@@ -28,7 +32,9 @@ public class UnitTests {
 		testListOne.add(one);
 		testListOne.add(two);
 		
-		Main.TestBuildStrings(testListOne);
+		List<String> results = Main.TestBuildStrings(testListOne);
+		
+		assertEquals(results.size(), 18);
 	}
 
 	@Test
@@ -52,7 +58,7 @@ public class UnitTests {
 		testListOne.add(one);
 		testListOne.add(two);
 		
-		Main.TestBuildStrings(testListOne);
-	
+		List<String> results = Main.TestBuildStrings(testListOne);
+		assertEquals(results.size(), 36);
 	}
 }
