@@ -1,0 +1,19 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * 
+ */
+
+/**
+ * @author Trey
+ *
+ */
+public class UnitTests {
+	
+	@Test
+	public void test1(){
+		
+	}
+}
