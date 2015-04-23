@@ -94,7 +94,31 @@ public class Main {
 
 	public static int GetMaximumSum(int[][] array){
 		int maxSum = 0;
+		if(array == null) return maxSum;
+		if(array.length == 0) return maxSum;
+		
+		maxSum = getMaxSum(array, 0, 0, array.length, 0);
 		
 		return maxSum;
+	}
+	
+	private static int getMaxSum(
+			int[][] array, 
+			int i, 
+			int j, 
+			int n,
+			int runningMaxSum){		
+		int newSum = runningMaxSum + array[i][j];
+		
+		if(newSum > runningMaxSum) runningMaxSum = newSum;
+		
+		int sum1 = ((i+1) < n) 
+				? getMaxSum(array, i+1, j, n, newSum)
+				: runningMaxSum;
+		int sum2 = ((j+1) < n) 
+				? getMaxSum(array, i, j+1, n, newSum)
+				: runningMaxSum;
+		
+		return sum1 + sum2;
 	}
 }
